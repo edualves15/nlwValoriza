@@ -1,19 +1,10 @@
-import express, { request, response } from "express";
+import "reflect-metadata";
+import express from "express";
+import { router } from "./routes";
+import "./database";
 
-// criação do servidor
 const app = express();
 
-app.get("/test", (request, response) => {
-    // request = entrada
-    // response = saída
-    return response.send("Olá, NLW!");
-});
-
-app.post("/test-post", (request, response) => {
-    return response.send("Olá, NLW! Método POST")
-});
-
-
-// http://localhost:3000
+app.use(express.json());
+app.use(router);
 app.listen(3000, () => console.log("Server is running"));
-
