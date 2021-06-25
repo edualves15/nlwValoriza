@@ -11,7 +11,6 @@ class CreateTagController {
 
         return response.json(tag);
     }
-
 }
 
 export { CreateTagController }
