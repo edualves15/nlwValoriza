@@ -4,9 +4,9 @@ import { ListUsersService } from "../services/ListUsersService";
 
 class ListUsersController {
     async handle(request: Request, response: Response) {
-        const listUsersService = new ListUsersService();
+        const ListUsersService = new ListUsersService();
 
-        const users = await listUsersService.execute();
+        const users = await ListUsersService.execute();
 
         return response.json(users);
     };

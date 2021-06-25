@@ -5,8 +5,8 @@ import { ensureAdmin } from "./middlewares/ensureAdmin";
 import { AuthenticateUserController } from "./controllers/AuthenticateUserController";
 import { CreateComplimentController } from "./controllers/CreateComplimentController";
 import { ensureAuthenticated } from "./middlewares/ensureAuthenticated";
-import { ListUserSendComplimentsController } from "./controllers/ListUserSendComplimentsController";
-import { ListUserReceiveComplimentsController } from "./controllers/ListUserReceiveComplimentsController";
+import { ListUsersendComplimentsController } from "./controllers/ListUsersendComplimentsController";
+import { ListUsersReceiveComplimentsController } from "./controllers/ListUsersReceiveComplimentsController";
 import { ListTagsController } from "./controllers/ListTagsController";
 import { ListUsersController } from "./controllers/ListUsersController";
 
@@ -15,19 +15,19 @@ const createUserController = new CreateUserController();
 const createTagController = new CreateTagController();
 const authenticateUserController = new AuthenticateUserController();
 const createComplimentController = new CreateComplimentController();
-const listUserSendComplimentsController = new ListUserSendComplimentsController();
-const listUserReceiveComplimentsController = new ListUserReceiveComplimentsController();
+const ListUsersendComplimentsController = new ListUsersendComplimentsController();
+const ListUsersReceiveComplimentsController = new ListUsersReceiveComplimentsController();
 const listTagsController = new ListTagsController();
-const listUsersController = new ListUsersController();
+const ListUsersController = new ListUsersController();
 
 router.post("/login", authenticateUserController.handle);
 router.post("/tags", ensureAuthenticated, ensureAdmin, createTagController.handle);
 router.get("/tags", ensureAuthenticated, listTagsController.handle);
 router.post("/users", ensureAuthenticated, createUserController.handle);
-router.get("/users", ensureAuthenticated, listUsersController.handle);
+router.get("/users", ensureAuthenticated, ListUsersController.handle);
 router.post("/compliments", ensureAuthenticated, createComplimentController.handle);
-router.get("/users/compliments/send", ensureAuthenticated, listUserSendComplimentsController.handle);
-router.get("/users/compliments/receive", ensureAuthenticated, listUserReceiveComplimentsController.handle);
+router.get("/users/compliments/send", ensureAuthenticated, ListUsersendComplimentsController.handle);
+router.get("/users/compliments/receive", ensureAuthenticated, ListUsersReceiveComplimentsController.handle);
 
 
 
