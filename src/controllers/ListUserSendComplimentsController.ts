@@ -1,18 +1,18 @@
 import { Request, Response } from "express";
-import { ListUsersSendComplimentsService } from "../services/ListUsersSendComplimentsService";
+import { ListUserSendComplimentsService } from "../services/ListUserSendComplimentsService";
 
 
-class ListUsersendComplimentsController {
+class ListUserSendComplimentsController {
     async handle(request: Request, response: Response) {
         const { user_id } = request;
 
-        const ListUsersSendComplimentsService = new ListUsersSendComplimentsService();
+        const listUserSendComplimentsService = new ListUserSendComplimentsService();
 
-        const compliments = await ListUsersSendComplimentsService.execute(user_id);
+        const compliments = await listUserSendComplimentsService.execute(user_id);
 
         return response.json(compliments);
     }
 }
 
 
-export { ListUsersendComplimentsController };
+export { ListUserSendComplimentsController };
