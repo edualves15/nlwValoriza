@@ -1,15 +1,15 @@
 # NLW VALORIZA
-###### Aplicação de backend implementada na trilha de Node.js durante o evento Next Level Week, da RocketSeat.
+##### Aplicação de backend implementada na trilha de Node.js durante o evento Next Level Week, da RocketSeat.
 
 ## Regras
 
-- Cadastro de usuários
+- **Cadastro de usuários**
 
     [ x ] Não é permitido cadastrar mais de um usuário com o mesmo e-mail.
 
     [ x ] Não é permitido cadastrar usuário sem e-mail.
 
-- Cadastro de TAG
+- **Cadastro de TAG**
 
     [ x ] Não é permitido cadastrar TAG sem nome.
 
@@ -17,7 +17,7 @@
 
     [ x ] Não é permitido o cadastro por usuários que não sejam administradores.
 
-- Cadastro de elogios
+- **Cadastro de elogios**
 
     [ x ] Não é permitido um usuário cadastrar elogios para si.
 
